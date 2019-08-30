@@ -21,4 +21,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('sampleList/', views.sampleList.as_view(), name='sampleList'),
     path('detail/<int:sample_id>', views.sample_detail, name="sample_detail")
-  ]
+]

@@ -1,7 +1,8 @@
 from rest_framework import serializers
-from .models import SewageSample
+from .models import SeawaterSample
+
 
 class SampleListSerializer (serializers.ModelSerializer):
     class Meta:
-        model = SewageSample
+        model = SeawaterSample
         fields = ['id', 'sampleLabel', 'depth']

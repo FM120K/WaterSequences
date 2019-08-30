@@ -1,14 +1,13 @@
 from django.db import models
 
 
-class SewageSample(models.Model):
+class SeawaterSample(models.Model):
     Other = "Other"
     sampleNumber = models.CharField(max_length=120)
-   
-   
+
     SURFACE = "Surface"
     BOTTOM = "Bottom"
-   
+
     depthChoices = [
         (SURFACE, "Surface"),
         (BOTTOM, "Bottom")
@@ -16,10 +15,9 @@ class SewageSample(models.Model):
 
     depth = models.CharField(
         max_length=7,
-        choices = depthChoices,
-        default = SURFACE
-    )  
-
+        choices=depthChoices,
+        default=SURFACE
+    )
 
     station18 = "18"
     stationA = "A"
@@ -33,16 +31,15 @@ class SewageSample(models.Model):
     ]
     sampleStation = models.CharField(
         max_length=2,
-        choices = stationChoices,
-        default = 18
+        choices=stationChoices,
+        default=18
     )
-
 
     depth = models.CharField(
         max_length=7,
-        choices = depthChoices,
-        default = SURFACE
-    )  
+        choices=depthChoices,
+        default=SURFACE
+    )
 
     sampleGPS_N = models.CharField(max_length=25, blank=True)
     sampleGPS_E = models.CharField(max_length=25, blank=True)
@@ -64,8 +61,8 @@ class SewageSample(models.Model):
 
     storage = models.CharField(
         max_length=20,
-        choices = storageChoices,
-        default = deg4
+        choices=storageChoices,
+        default=deg4
     )
     processedVolume = models.FloatField(blank=True)
     remainingVolume = models.FloatField(blank=True)
@@ -73,33 +70,24 @@ class SewageSample(models.Model):
     qiagen = "Qiagen"
     MN = "MN"
     Mobio = "Mobio"
-    
 
-    kitChoices = [(qiagen, "Qiagen"),(MN , "MN"),(  Mobio , "Mobio"),( Other , "Other"),]
-    
+    kitChoices = [(qiagen, "Qiagen"), (MN, "MN"),
+                  (Mobio, "Mobio"), (Other, "Other"), ]
 
     sampleKit = models.CharField(
-        max_length=6, 
-        choices = kitChoices,
-        default = qiagen
+        max_length=6,
+        choices=kitChoices,
+        default=qiagen
     )
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     sampleDepth = models.FloatField(blank=True)
     sampleO2Level = models.FloatField(blank=True)
     sampleTemp = models.FloatField(blank=True)
     sampleSalinity = models.FloatField(blank=True)
     airTempInShade = models.FloatField(blank=True)
-    cloudCover = models.CharField(max_length=120,blank=True)
+    cloudCover = models.CharField(max_length=120, blank=True)
     windSpeed = models.FloatField(blank=True)
-    seaColor = models.CharField(max_length=120,blank=True)
+    seaColor = models.CharField(max_length=120, blank=True)
 
     HTIDE = "htid"
     MTIDE = "mtid"
@@ -113,18 +101,17 @@ class SewageSample(models.Model):
 
     tide = models.CharField(
         max_length=4,
-        choices = tideChoices,
-        default = LTIDE
+        choices=tideChoices,
+        default=LTIDE
     )
 
     RH = models.FloatField(blank=True)
-    windDirection = models.CharField(max_length=2,blank=True)
+    windDirection = models.CharField(max_length=2, blank=True)
     baromPressure = models.FloatField(blank=True)
     waveHeight = models.FloatField(blank=True)
     SucchiDisc = models.FloatField(blank=True)
     TotalDepth = models.FloatField(blank=True)
     Notes = models.TextField(blank=True)
-    
 
     def __str__(self):
         return self.sampleLabel
