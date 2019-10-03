@@ -54,9 +54,9 @@ class SeawaterSample(models.Model):
 
     storageChoices = [
         (RT, "Room Temperature"),
-        (deg4, "4 Degrees"),
-        (mdeg20, "Minus 20 Degrees"),
-        (mdeg80, "Minus 80 Degrees")
+        (deg4, "4 Degrees Celsius"),
+        (mdeg20, "Minus 20 Degrees Celsius"),
+        (mdeg80, "Minus 80 Degrees Celsius")
     ]
 
     storage = models.CharField(
@@ -64,15 +64,15 @@ class SeawaterSample(models.Model):
         choices=storageChoices,
         default=deg4
     )
-    processedVolume = models.FloatField(blank=True)
-    remainingVolume = models.FloatField(blank=True)
+    processedVolume(L) = models.FloatField(blank=True)
+    remainingVolume(L) = models.FloatField(blank=True)
 
-    qiagen = "Qiagen"
-    MN = "MN"
-    Mobio = "Mobio"
+    qiagen = "Qiagen DNeasy Animal and Tissue Kit"
+    MN = "Macherey-Nagel Nucleospin Kit"
+    Mobio = "MO BIO PowerSoil DNA Isolation Kit"
 
-    kitChoices = [(qiagen, "Qiagen"), (MN, "MN"),
-                  (Mobio, "Mobio"), (Other, "Other"), ]
+    kitChoices = [(qiagen, "Qiagen DNeasy Animal and Tissue Kit"), (MN, "Macherey-Nagel Nucleospin Kit"),
+                  (Mobio, "MO BIO PowerSoil DNA Isolation Kit"), (Other, "Other"), ]
 
     sampleKit = models.CharField(
         max_length=6,
