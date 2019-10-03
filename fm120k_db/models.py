@@ -64,8 +64,8 @@ class SeawaterSample(models.Model):
         choices=storageChoices,
         default=deg4
     )
-    processedVolume(L) = models.FloatField(blank=True)
-    remainingVolume(L) = models.FloatField(blank=True)
+    processedVolume = models.FloatField(blank=True)
+    remainingVolume = models.FloatField(blank=True)
 
     qiagen = "Qiagen DNeasy Animal and Tissue Kit"
     MN = "Macherey-Nagel Nucleospin Kit"
