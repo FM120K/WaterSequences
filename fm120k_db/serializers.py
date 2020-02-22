@@ -6,3 +6,9 @@ class SampleListSerializer (serializers.ModelSerializer):
     class Meta:
         model = SeawaterSample
         fields = ['id', 'sampleLabel', 'depth']
+
+class SampleCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SeawaterSample
+        fields = ['sampleNumer']
+        ##fields = ['sampleNumber', 'sampleLabel', 'sampleStation', 'collectionTiming', 'sampleVolume', 'processed', 'storage']
