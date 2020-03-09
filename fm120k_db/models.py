@@ -131,8 +131,8 @@ class SeawaterSample(models.Model):
     DNA_Concentration = models.FloatField(blank=True)
     Carb_Concentration = models.FloatField(blank=True)
     TotalYield = models.FloatField(blank=True)
-    F_readfile = models.URLField(blank=True)
-    R_readfile = models.URLField(blank=True)
+    F_readfile = models.URLField(null=True, blank=True)
+    R_readfile = models.URLField(null=True, blank=True)
     Notes = models.TextField(blank=True)
 
 
