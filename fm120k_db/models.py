@@ -66,13 +66,13 @@ class SeawaterSample(models.Model):
    
     sampleNumber = models.CharField(max_length=120)
     depth = models.CharField(
-        max_length=7,
+        max_length=50,
         choices=depthChoices,
         default=SURFACE
     )
     sampleLabel = models.CharField(max_length=120, blank=True)
     sampleStation = models.CharField(
-        max_length=2,
+        max_length=6,
         choices=stationChoices,
         default=18
     )
@@ -99,7 +99,7 @@ class SeawaterSample(models.Model):
     remainingVolume = models.FloatField(blank=True)
 
     extractionKit = models.CharField(
-        max_length=6,
+        max_length=120,
         choices=kitChoices,
         default=qiagen
     )
@@ -131,8 +131,8 @@ class SeawaterSample(models.Model):
     DNA_Concentration = models.FloatField(blank=True)
     Carb_Concentration = models.FloatField(blank=True)
     TotalYield = models.FloatField(blank=True)
-    F_readfile = models.URLField()
-    R_readfile = models.URLField()
+    F_readfile = models.URLField(blank=True)
+    R_readfile = models.URLField(blank=True)
     Notes = models.TextField(blank=True)
 
 
