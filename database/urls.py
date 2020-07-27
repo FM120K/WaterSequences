@@ -21,6 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('addWaterSample/', views.SampleCreate.as_view(), name="addWaterSample"),
     path('sampleList/', views.sampleList.as_view(), name='sampleList'),
-    path('detail/<int:sample_id>', views.sample_detail, name="sample_detail")
+    path('detail/<int:sample_id>', views.sample_detail, name="sample_detail"),
     
 ]

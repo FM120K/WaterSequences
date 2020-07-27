@@ -5,12 +5,6 @@ from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
 from .serializers import SampleListSerializer, SampleCreateSerializer
 # Create your views here.
 
-
-
-
-
-
-
 class sampleList(ListAPIView):
     queryset = SeawaterSample.objects.all()
     serializer_class = SampleListSerializer
