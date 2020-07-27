@@ -58,11 +58,6 @@ class SeawaterSample(models.Model):
         (MTIDE, "Mid Tide"),
         (HTIDE, "High Tide")
     ]
-
-    
-
-    
-
    
     sampleNumber = models.CharField(max_length=120)
     depth = models.CharField(
@@ -70,6 +65,7 @@ class SeawaterSample(models.Model):
         choices=depthChoices,
         default=SURFACE
     )
+
     sampleLabel = models.CharField(max_length=120, blank=True)
     sampleStation = models.CharField(
         max_length=6,
@@ -134,8 +130,6 @@ class SeawaterSample(models.Model):
     F_readfile = models.URLField(null=True, blank=True)
     R_readfile = models.URLField(null=True, blank=True)
     Notes = models.TextField(blank=True)
-
-
 
     def __str__(self):
         return self.sampleLabel
