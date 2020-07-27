@@ -19,7 +19,7 @@ from fm120k_db import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('sampleList/addWaterSample', views.SampleCreate.as_view(), name="sample-create"),
+    path('addWaterSample', views.SampleCreate.as_view(), name="sample-create"),
     path('sampleList/', views.sampleList.as_view(), name='sampleList'),
     path('detail/<int:sample_id>', views.sample_detail, name="sample_detail")
     
