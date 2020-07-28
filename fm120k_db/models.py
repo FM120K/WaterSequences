@@ -76,10 +76,10 @@ class SeawaterSample(models.Model):
     sampleGPS_N = models.CharField(max_length=25, blank=True)
     sampleGPS_E = models.CharField(max_length=25, blank=True)
 
-    sampleDate = models.TextField(max_length=25)
-    sampleTime = models.TextField(max_length=25)
+    sampleDate = models.TextField(max_length=25, blank=True)
+    sampleTime = models.TextField(max_length=25, blank=True)
     
-    sampleVolume = models.FloatField(blank=True)
+    sampleVolume = models.FloatField(blank=True, null = True)
     storage = models.CharField(
         max_length=20,
         choices=storageChoices,
@@ -91,8 +91,8 @@ class SeawaterSample(models.Model):
         default = PR
     )
 
-    processedVolume = models.FloatField(blank=True)
-    remainingVolume = models.FloatField(blank=True)
+    processedVolume = models.FloatField(null=True, blank=True)
+    remainingVolume = models.FloatField(null=True, blank=True)
 
     extractionKit = models.CharField(
         max_length=120,
@@ -100,13 +100,13 @@ class SeawaterSample(models.Model):
         default=qiagen
     )
 
-    sampleDepth = models.FloatField(blank=True)
-    sampleO2Level = models.FloatField(blank=True)
-    sampleTemp = models.FloatField(blank=True)
-    sampleSalinity = models.FloatField(blank=True)
-    airTempInShade = models.FloatField(blank=True)
+    sampleDepth = models.FloatField(blank=True, null=True)
+    sampleO2Level = models.FloatField(blank=True, null=True)
+    sampleTemp = models.FloatField(blank=True, null=True)
+    sampleSalinity = models.FloatField(blank=True, null=True)
+    airTempInShade = models.FloatField(blank=True, null=True)
     cloudCover = models.CharField(max_length=120, blank=True)
-    windSpeed = models.FloatField(blank=True)
+    windSpeed = models.FloatField(blank=True, null=True)
     seaColor = models.CharField(max_length=120, blank=True)
 
     tide = models.CharField(
@@ -115,18 +115,18 @@ class SeawaterSample(models.Model):
         default=LTIDE
     )
 
-    RH = models.FloatField(blank=True)
+    RH = models.FloatField(blank=True, null= True)
     windDirection = models.CharField(max_length=2, blank=True)
-    baromPressure = models.FloatField(blank=True)
-    waveHeight = models.FloatField(blank=True)
-    secchiDisk = models.FloatField(blank=True)
-    TotalDepth = models.FloatField(blank=True)
+    baromPressure = models.FloatField(blank=True, null = True)
+    waveHeight = models.FloatField(blank=True, null= True)
+    secchiDisk = models.FloatField(blank=True, null= True)
+    TotalDepth = models.FloatField(blank=True, null= True)
 
-    elutionVolume = models.FloatField(blank=True)
-    Concentration = models.FloatField(blank=True)
-    DNA_Concentration = models.FloatField(blank=True)
-    Carb_Concentration = models.FloatField(blank=True)
-    TotalYield = models.FloatField(blank=True)
+    elutionVolume = models.FloatField(blank=True, null= True)
+    Concentration = models.FloatField(blank=True, null= True)
+    DNA_Concentration = models.FloatField(blank=True, null= True)
+    Carb_Concentration = models.FloatField(blank=True, null= True)
+    TotalYield = models.FloatField(blank=True, null= True)
     F_readfile = models.URLField(null=True, blank=True)
     R_readfile = models.URLField(null=True, blank=True)
     Notes = models.TextField(blank=True)
