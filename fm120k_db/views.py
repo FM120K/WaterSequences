@@ -12,6 +12,8 @@ class sampleList(ListAPIView):
 
 class SampleCreate (CreateAPIView):
     serializer_class = SampleCreateSerializer
+    def post (self, request, *args, **kwargs):
+        return self.create (request, *args, **kwargs)
     
 
 
