@@ -16,7 +16,7 @@ class SampleCreate (APIView):
     def post (self, request, *args, **kwargs):
         serializer = SampleSerializer(data=request.data)
 
-        ifserializer.is_valid(raise_exception=True):
+        if serializer.is_valid(raise_exception=True):
             Sample.objects.create(sampleNumber=request.data["sampleNumber"],sampleVolume=request.data["sampleVolume"], depth = request.data["depth"], sampleLabel = request.data["sampleLabel"], sampleStation = request.data["sampleStation"], storage= request.data["storage"], processed = request.data["processed"], extractionKit = request.data["extractionKit"])
 
             return Response("Data is inserted successfully", status=status.HTTP_200_OK)
