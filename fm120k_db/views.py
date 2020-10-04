@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from .models import SeawaterSample
-from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, APIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
+from rest_framework.views import APIView
 from .serializers import SampleListSerializer, SampleCreateSerializer
 # Create your views here.
 
