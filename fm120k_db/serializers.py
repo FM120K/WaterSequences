@@ -12,3 +12,4 @@ class SampleCreateSerializer(serializers.ModelSerializer):
         model = SeawaterSample
         fields = ['sampleNumber', 'sampleVolume', 'depth', 'sampleLabel', 'sampleStation', 'storage', 'processed', 'extractionKit']
         ##fields = ['sampleNumber', 'sampleLabel', 'sampleStation', 'collectionTiming', 'sampleVolume', 'processed', 'storage']
+    
