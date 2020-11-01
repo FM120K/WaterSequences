@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from fm120k_db import views
 
+from rest_framework_jwt.views import obtain_jwt_token
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('create/', views.SampleCreate.as_view(), name="addWaterSample"),
     path('sampleList/', views.sampleList.as_view(), name='sampleList'),
     path('detail/<int:sample_id>', views.sample_detail, name="sample_detail"),
-    
+    path('login/', obtain_jwt_token, name='login'),
+         
 ]

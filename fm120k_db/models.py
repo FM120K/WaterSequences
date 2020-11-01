@@ -30,9 +30,9 @@ class SeawaterSample(models.Model):
     ]
 
     RT = "Room Temperature"
-    deg4 = "4 Degrees"
-    mdeg20 = "-20 Degrees"
-    mdeg80 = "-80 Degrees"
+    deg4 = "4 Degrees Celsius"
+    mdeg20 = "-20 Degrees Celsius"
+    mdeg80 = "-80 Degrees Celsius"
 
     storageChoices = [
         (RT, "Room Temperature"),
@@ -49,9 +49,9 @@ class SeawaterSample(models.Model):
                   (Mobio, "MO BIO PowerSoil DNA Isolation Kit"), (Other, "Other"), ]
                   
 
-    HTIDE = "htid"
-    MTIDE = "mtid"
-    LTIDE = "ltid"
+    HTIDE = "High Tide"
+    MTIDE = "Mid Tide"
+    LTIDE = "Low Tide"
 
     tideChoices = [
         (LTIDE, "Low Tide"),
