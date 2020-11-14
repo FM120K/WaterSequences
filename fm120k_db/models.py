@@ -111,7 +111,7 @@ class SeawaterSample(models.Model):
     seaColor = models.CharField(max_length=120, blank=True)
 
     tide = models.CharField(
-        max_length=4,
+        max_length=20,
         choices=tideChoices,
         default=LTIDE
     )
