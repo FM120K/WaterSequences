@@ -13,6 +13,7 @@ class SeawaterSample(models.Model):
     station18 = "18"
     stationA = "A"
     K6 = "K6"
+
     stationChoices = [
         (station18, "18"),
         (stationA, "A"),
@@ -37,8 +38,8 @@ class SeawaterSample(models.Model):
     storageChoices = [
         (RT, "Room Temperature"),
         (deg4, "4 Degrees Celsius"),
-        (mdeg20, "Minus 20 Degrees Celsius"),
-        (mdeg80, "Minus 80 Degrees Celsius")
+        (mdeg20, "-20 Degrees Celsius"),
+        (mdeg80, "-80 Degrees Celsius")
     ]
 
     qiagen = "Qiagen DNeasy Animal and Tissue Kit"
