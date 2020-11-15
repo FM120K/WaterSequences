@@ -77,8 +77,8 @@ class SeawaterSample(models.Model):
     sampleGPS_N = models.CharField(max_length=25, blank=True)
     sampleGPS_E = models.CharField(max_length=25, blank=True)
 
-    sampleDate = models.TextField(max_length=25, blank=True)
-    sampleTime = models.TextField(max_length=25, blank=True)
+    sampleDate = models.CharField(max_length=25, blank=True)
+    sampleTime = models.CharField(max_length=25, blank=True)
     
     sampleVolume = models.FloatField(blank=True, null = True)
     storage = models.CharField(
