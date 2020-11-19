@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('create/', views.SampleCreate.as_view(), name="addWaterSample"),
     path('sampleList/', views.sampleList.as_view(), name='sampleList'),
-    path('detail/<int:sample_id>', views.sample_detail, name="sample_detail"),
+    path('detail/<int:sample_number>', views.sample_detail, name="sample_detail"),
     path('login/', obtain_jwt_token, name='login'),
          
 ]

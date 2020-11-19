@@ -10,5 +10,5 @@ class SampleListSerializer (serializers.ModelSerializer):
 class SampleCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = SeawaterSample
-        fields = ['sampleNumber', 'sampleVolume', 'depth', 'sampleLabel', 'sampleStation', 'storage', 'processed', 'extractionKit', 'sampleDate', 'sampleTime']
+        fields = ['sampleNumber', 'sampleVolume', 'depth', 'sampleLabel', 'sampleStation', 'storage', 'processed', 'extractionKit', 'sampleDate', 'sampleTime', 'sampleGPS_N', 'sampleGPS_E', 'sampleDepth', 'sampleO2Level', 'sampleTemp', 'sampleSalinity', 'airTempInShade','cloudCover','windSpeed','seaColor','tide','RH', 'windDirection','baromPressure','waveHeight','secchiDisk','TotalDepth']
     
