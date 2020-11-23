@@ -92,8 +92,8 @@ class SeawaterSample(models.Model):
         default = PR
     )
 
-    processedVolume = models.FloatField(null=True, blank=True)
-    remainingVolume = models.FloatField(null=True, blank=True)
+    processedVolume = models.FloatField(blank=True, null=True)
+    remainingVolume = models.FloatField(blank=True, null=True)
 
     extractionKit = models.CharField(
         max_length=120,
@@ -128,8 +128,8 @@ class SeawaterSample(models.Model):
     DNA_Concentration = models.FloatField(blank=True, null= True)
     Carb_Concentration = models.FloatField(blank=True, null= True)
     TotalYield = models.FloatField(blank=True, null= True)
-    F_readfile = models.URLField(null=True, blank=True)
-    R_readfile = models.URLField(null=True, blank=True)
+    F_readfile = models.URLField(blank=True, null=True)
+    R_readfile = models.URLField(blank=True, null=True)
     Notes = models.TextField(blank=True)
 
     def __str__(self):
