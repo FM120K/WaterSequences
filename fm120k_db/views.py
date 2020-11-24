@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from .models import SeawaterSample
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
 from .serializers import SampleListSerializer, SampleCreateSerializer
+from rest_framework.permissions import IsAdminUser
 # Create your views here.
 
 class sampleList(ListAPIView):
