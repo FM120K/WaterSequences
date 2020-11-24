@@ -12,9 +12,11 @@ class sampleList(ListAPIView):
 
 class SampleCreate (CreateAPIView):
     serializer_class = SampleCreateSerializer
+    permission_classes = [IsAdminUser]
 
 def sample_detail(request, sample_number):
     sample_object = SeawaterSample.objects.get(sampleNumber=sample_number)
+
     my_sample = {
         'sampleNumber': sample_object.sampleNumber,
         'depth': sample_object.depth,
