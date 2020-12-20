@@ -25,7 +25,7 @@ SECRET_KEY = '9$^fq)9_+g_-%q)h#m+ew=4@b$-bvm16$avj2+#fqqedl121ku'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['161.35.203.15']
+ALLOWED_HOSTS = ['161.35.203.15', 'https://fm120ksubmission.netlify.app/']
 ##ALLOWED_HOSTS = ['127.0.0.1']
 
 
