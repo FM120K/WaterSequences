@@ -24,7 +24,7 @@ urlpatterns = [
     path('create/', views.SampleCreate.as_view(), name="addWaterSample"),
     path('sampleList/', views.sampleList.as_view(), name='sampleList'),
     path('detail/<int:sample_number>', views.sample_detail, name="sample_detail"),
-    path('update/<int:sample_number>', views.UpdateSample.as_view(), name="updateSample"),
+    path('update/>', views.UpdateSample.as_view(), name="updateSample"),
     path('login/', obtain_jwt_token, name='login'),
          
 ]

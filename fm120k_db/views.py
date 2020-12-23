@@ -11,8 +11,8 @@ class sampleList(ListAPIView):
     serializer_class = SampleListSerializer
 
 
-class UpdateSample(UpdateAPIView, sample_number):
-    queryset = SeawaterSample.objects.get(sampleNumber=sample_number)
+class UpdateSample(UpdateAPIView):
+    queryset = SeawaterSample.objects.all()
     serializer_class = SampleCreateSerializer
 
     ##permission_classes = [IsAdminUser]
