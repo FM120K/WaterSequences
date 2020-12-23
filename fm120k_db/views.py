@@ -12,7 +12,10 @@ class sampleList(ListAPIView):
 
 
 class UpdateSample(UpdateAPIView):
+    queryset = SeawaterSample.objects.all()
     serializer_class = SampleCreateSerializer
+    lookup_field = 'sampleNumber'
+
     ##permission_classes = [IsAdminUser]
 
 
