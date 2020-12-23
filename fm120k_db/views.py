@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from .models import SeawaterSample
-from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, RetrieveUpdateAPIView
 from .serializers import SampleListSerializer, SampleCreateSerializer
 from rest_framework.permissions import IsAdminUser
 # Create your views here.
@@ -11,12 +11,11 @@ class sampleList(ListAPIView):
     serializer_class = SampleListSerializer
 
 
-class UpdateSample(UpdateAPIView):
+class UpdateSample(RetrieveUpdateAPIView):
     queryset = SeawaterSample.objects.all()
     serializer_class = SampleCreateSerializer
-
-    ##permission_classes = [IsAdminUser]
-
+    lookup_field = 'sampleNumber'
+    lookup_url_kwarg = 'sample_number'
 
 class SampleCreate (CreateAPIView):
     serializer_class = SampleCreateSerializer
