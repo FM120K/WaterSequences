@@ -8,7 +8,7 @@ from rest_framework.permissions import IsAdminUser
 
 class sampleList(ListAPIView):
     queryset = SeawaterSample.objects.all()
-    serializer_class = SampleListSerializer
+    serializer_class = SampleCreateSerializer
 
 
 class UpdateSample(RetrieveUpdateAPIView):
